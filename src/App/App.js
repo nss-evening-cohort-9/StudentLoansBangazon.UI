@@ -4,11 +4,12 @@ import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/Navbar/Navbar';
+import MyProfile from '../Components/MyProfile/MyProfile';
 
 const PublicRoute = ({ component: Component, authed, ...rest}) => {
   const routeChecker = props => ( authed === false
     ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/Home', state: { from: props.location }}}/>)
+    : (<Redirect to={{ pathname: '/MyHome', state: { from: props.location }}}/>)
   );
   return <Route {...rest} render={props => routeChecker(props)}/>
 };
@@ -16,7 +17,7 @@ const PublicRoute = ({ component: Component, authed, ...rest}) => {
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
   const routeChecker = props => ( authed === true
     ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/MyProfile', state: { from: props.location }}}/>)
+    : (<Redirect to={{ pathname: '/Home', state: { from: props.location }}}/>)
   );
   return <Route {...rest} render={props => routeChecker(props)}/>
 };
@@ -34,6 +35,8 @@ class App extends React.Component {
           <MyNavbar authed={this.state.authed}/>
             <Switch>
               <PublicRoute path='/Home' component={Home} authed={this.state.authed}/>
+              <PrivateRoute path='/MyHome' component={Home} authed={this.state.authed}/>
+              <PrivateRoute path='/MyProfile' component={MyProfile} authed={this.state.authed}/>
               {/* <PublicRoute path='/CreateUser' component={CreateUser} authed={authed}/> */}
               {/* <PrivateRoute path='/MyProfile' component={MyProfile} authed={authed}/> */}
               <Redirect from="*" to="/Home"/>
