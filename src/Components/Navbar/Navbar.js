@@ -24,13 +24,13 @@ class MyNavbar extends React.Component {
       }
     
     logMeOut = (e) => {
-        console.error("you tried to log out")
+        this.props.logMeOut()
         // e.preventDefault();
         // firebase.auth().signOut();
     }  
 
     logMeIn = (e) => {
-        console.error("you tried to log in")
+        this.props.logMeIn()
     }
 
     render() {
@@ -43,7 +43,7 @@ class MyNavbar extends React.Component {
                     <NavLink tag={RRNavLink} to='/MyHome'>Home</NavLink>
                     </NavItem>
                     <NavItem>
-                    <NavLink tag={RRNavLink} to='/MyProfile'>My Dashboard</NavLink>
+                    <NavLink tag={RRNavLink} to='/MyProfile'>My Profile</NavLink>
                     </NavItem>
                     <NavItem>
                     <NavLink onClick={this.logMeOut}>Logout</NavLink>

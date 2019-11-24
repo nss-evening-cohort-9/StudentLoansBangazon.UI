@@ -28,11 +28,19 @@ class App extends React.Component {
     authed : false
   }
 
+  logMeIn = () => {
+    this.setState({authed : true})
+  }
+
+  logMeOut = () => {
+    this.setState({authed : false})
+  }
+
   render() {
     return (
       <BrowserRouter>
         <React.Fragment>
-          <MyNavbar authed={this.state.authed}/>
+          <MyNavbar authed={this.state.authed} logMeIn={this.logMeIn} logMeOut={this.logMeOut}/>
             <Switch>
               <PublicRoute path='/Home' component={Home} authed={this.state.authed}/>
               <PrivateRoute path='/MyHome' component={Home} authed={this.state.authed}/>
