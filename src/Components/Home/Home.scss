@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+}
+.Home{
+    background-color: #e7e7e7;
+    margin: 0 auto;
+
+    .listbutton{
+        display: block;
+        margin: 5px auto;
+    }
+    .productContainer{
+        margin: 25px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 75%;
+        background-color: white;
+        border-radius: 10px;
+
+
+        .singleProduct{
+            text-align: center;
+            padding: 5px;
+            width: 250px;
+            margin: 5px 10px;
+
+            .productName{
+                text-transform: capitalize;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .smallImg{
+        max-width: 4em;
+    }
+
+}

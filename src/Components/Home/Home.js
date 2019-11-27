@@ -10,7 +10,6 @@ class Home extends Component {
 
 
   componentDidMount = () => {
-    console.log("home mounted")
     productData.getAllProducts()
     .then(resp => {
       const data = resp
@@ -20,12 +19,18 @@ class Home extends Component {
   render () {
     const products = this.state.products
     const productNames = products.map((product) => (
-      <h2>{product.name}</h2>
-    ))
+      <div className="singleProduct">
+      <img src={product.imageUrl} class="smallImg" alt={product.name}/>
+      <h2 className="productName">{product.name}</h2>
+      <h4>${product.pricePerDay}/day</h4>
+      </div>
+      ));
     return (
       <div className="Home">
-          <h1 className="HelloText">Hi</h1>
+          <button className="btn btn-warning listbutton">List Your Stuff</button>
+          <div className="productContainer">
           {productNames}
+          </div>
       </div>
     );
   }
