@@ -38,6 +38,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <div className="App">
       <BrowserRouter>
         <React.Fragment>
           <MyNavbar authed={this.state.authed} logMeIn={this.logMeIn} logMeOut={this.logMeOut}/>
@@ -50,6 +51,7 @@ class App extends React.Component {
             </Switch>
         </React.Fragment>
       </BrowserRouter>
+      </div>
     );
   }
 }
