@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/Navbar/Navbar';
 import MyProfile from '../Components/MyProfile/MyProfile';
+import SingleProduct from '../Components/SingleProduct/SingleProduct';
 
 const PublicRoute = ({ component: Component, authed, ...rest}) => {
   const routeChecker = props => ( authed === false
@@ -45,6 +46,7 @@ class App extends React.Component {
               <PublicRoute path='/Home' component={Home} authed={this.state.authed}/>
               <PrivateRoute path='/MyHome' component={Home} authed={this.state.authed}/>
               <PrivateRoute path='/MyProfile' component={MyProfile} authed={this.state.authed}/>
+              <PublicRoute path='/product/:id' component={SingleProduct} authed={this.state.authed}/>
               {/* <PublicRoute path='/CreateUser' component={CreateUser} authed={authed}/> */}
               <Redirect from="*" to="/Home"/>
             </Switch>
