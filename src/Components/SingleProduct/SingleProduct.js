@@ -31,6 +31,9 @@ export class SingleProduct extends Component {
                     <div className="singleProductOwner">
                      <p>Jeressia Williamson</p>
                     </div>
+                    <div className="singleProductBackButtom">
+                     <p>Return to listings</p>
+                    </div>
                   </div>
                   <div className="rightSingleProduct">
                     <h3 className="singleProductName">{product.name}</h3>
