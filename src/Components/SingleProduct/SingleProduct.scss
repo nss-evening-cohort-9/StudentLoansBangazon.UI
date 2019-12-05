@@ -30,6 +30,26 @@
                 justify-content: space-around;
                 align-items: center;
 
+                .singleProductOwner{
+                        background-color: #f7d2c1;
+                        font-size: 15px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        padding: 10px;
+                        border-radius: 15px;
+                        height: 50px;
+                        position: relative;
+
+                        .ownerImage {
+                            img{
+                                width: 80px;
+                                position: absolute;
+                                top: 0px;
+                                left: -55px;
+                            }
+                        }
+                }
+
                 .singleProductImage{
                     img{
                         max-width: 300px;

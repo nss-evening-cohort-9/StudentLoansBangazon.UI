@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import productData from '../../data/productData';
+import photo from '../../assets/spbb.png';
 
 import './SingleProduct.scss';
 
@@ -29,7 +30,13 @@ export class SingleProduct extends Component {
                       <img src={product.imageUrl} alt={product.name}/>
                     </div>
                     <div className="singleProductOwner">
-                     <p>Jeressia Williamson</p>
+                      <div className="ownerImage">
+                        <img src={photo} alt="owner"></img>
+                      </div>
+                      <div className="ownerRating">
+                     Rent From {product.fullName}<br></br>
+                     *****
+                      </div>
                     </div>
                     <div className="singleProductBackButtom">
                      <p>Return to listings</p>
