@@ -38,9 +38,9 @@ export class SingleProduct extends Component {
                      *****
                       </div>
                     </div>
-                    <div className="singleProductBackButtom">
+                    {/* <div className="singleProductBackButtom">
                      <p>Return to listings</p>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="rightSingleProduct">
                     <h3 className="singleProductName">{product.name}</h3>
