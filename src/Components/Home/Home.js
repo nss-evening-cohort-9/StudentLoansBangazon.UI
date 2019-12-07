@@ -3,6 +3,8 @@ import './Home.scss';
 
 import productData from '../../data/productData';
 
+import ProductCard from '../ProductCard/ProductCard';
+
 class Home extends Component {
   state = {
     products : []
@@ -19,12 +21,10 @@ class Home extends Component {
   render () {
     const products = this.state.products
     const productNames = products.map((product) => (
-      <div className="singleProduct">
-      <img src={product.imageUrl} class="smallImg" alt={product.name}/>
-      <h2 className="productName">{product.name}</h2>
-      <h4>${product.pricePerDay}/day</h4>
-      </div>
+      <ProductCard product={product} />
       ));
+
+
     return (
       <div className="Home">
           <button className="btn btn-warning listbutton">List Your Stuff</button>
