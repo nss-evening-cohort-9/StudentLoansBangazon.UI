@@ -29,6 +29,14 @@ class MyProfile extends React.Component {
                 <div id="OwnerProductContainer">
                     {ownerProducts}
                 </div>
+                {/* <div id="testContainer">
+                    <div>
+                        <h2>this is left column</h2>
+                    </div>
+                    <div>
+                        <h2>this is right column</h2>
+                    </div>
+                </div> */}
             </div>
         )
     }

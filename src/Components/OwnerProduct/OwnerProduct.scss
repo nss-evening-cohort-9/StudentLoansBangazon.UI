@@ -1,5 +1,25 @@
 .ownerProductCard {
-    border: solid 1px black;
-    width: 250px;
+    display: flex;
     padding: 10px;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    #ownerProductCard-leftColumn {
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        // max-width: 50%;
+        border: solid 1px purple;
+        #ownerProductCard-productImage {
+            max-width: 325px
+        }
+    }
+    #ownerProductCard-rightColumn {
+        padding: 10px;
+        border: solid 1px green;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
