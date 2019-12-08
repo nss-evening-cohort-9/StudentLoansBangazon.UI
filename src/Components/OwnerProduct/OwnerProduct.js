@@ -6,7 +6,7 @@ class OwnerProduct extends React.Component {
         return (
             <div id={this.props.ownerProduct.id}className="ownerProductCard">
                 <div id="ownerProductCard-leftColumn">
-                    <p>{this.props.ownerProduct.productName}</p>
+                    <h3>{this.props.ownerProduct.productName}</h3>
                     <img id="ownerProductCard-productImage"src={this.props.ownerProduct.imageUrl}/>
                 </div>
                 <div id="ownerProductCard-rightColumn">
@@ -20,7 +20,7 @@ class OwnerProduct extends React.Component {
                     </div>
                     <div>
                         <h4>Price Per Day</h4>
-                        <h5>{this.props.ownerProduct.pricePerDay}</h5>
+                        <h5>${this.props.ownerProduct.pricePerDay}</h5>
                     </div>
                 </div>
             </div>

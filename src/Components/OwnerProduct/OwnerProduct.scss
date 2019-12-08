@@ -3,23 +3,29 @@
     padding: 10px;
     margin-bottom: 10px;
     justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: white;
+    border: solid 2px black;
     #ownerProductCard-leftColumn {
         text-align: center;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        // max-width: 50%;
-        border: solid 1px purple;
         #ownerProductCard-productImage {
-            max-width: 325px
+            max-width: 275px;
+            border: solid 1px black;
         }
     }
     #ownerProductCard-rightColumn {
         padding: 10px;
-        border: solid 1px green;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        text-align: center;
     }
+}
+
+.ownerProductCard:last-child {
+    margin-bottom: 0px;
 }
