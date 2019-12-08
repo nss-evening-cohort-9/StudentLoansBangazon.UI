@@ -6,23 +6,36 @@
     flex-wrap: wrap;
     background-color: white;
     border: solid 2px black;
-    #ownerProductCard-leftColumn {
+    .ownerProductCard-leftColumn {
         text-align: center;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        #ownerProductCard-productImage {
+        .ownerProductCard-productImage {
             max-width: 275px;
             border: solid 1px black;
         }
     }
-    #ownerProductCard-rightColumn {
-        padding: 10px;
+    .ownerProductCard-rightColumn {
+        padding: 15px 5px;
         display: flex;
-        flex-direction: column;
         justify-content: space-around;
-        align-items: center;
+        flex-wrap: wrap;
         text-align: center;
+        align-items: center;
+        .ownerProductCard-leftInfoSet {
+            padding: 0px 8px;
+        }
+        .ownerProductCard-rightInfoSet {
+            padding: 0px 8px;
+        }
+        .ownerProductCard-InfoHeader {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .ownerProductCard-InfoContent {
+            font-size: 15px;
+        }
     }
 }
 

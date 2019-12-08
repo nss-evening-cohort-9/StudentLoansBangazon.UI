@@ -5,22 +5,34 @@ class OwnerProduct extends React.Component {
     render() {
         return (
             <div id={this.props.ownerProduct.id}className="ownerProductCard">
-                <div id="ownerProductCard-leftColumn">
+                <div className="ownerProductCard-leftColumn">
                     <h3>{this.props.ownerProduct.productName}</h3>
-                    <img id="ownerProductCard-productImage"src={this.props.ownerProduct.imageUrl}/>
+                    <img className="ownerProductCard-productImage"src={this.props.ownerProduct.imageUrl}/>
                 </div>
-                <div id="ownerProductCard-rightColumn">
-                    <div>
-                        <h4>Rental Start Date</h4>
-                        <h5>{this.props.ownerProduct.startDate}</h5>
+                <div className="ownerProductCard-rightColumn">
+                    <div className="ownerProductCard-leftInfoSet">
+                        <div>
+                            <p className="ownerProductCard-InfoHeader">Rental Start Date</p>
+                            <p className="ownerProductCard-InfoContent">{this.props.ownerProduct.startDate}</p>
+                        </div>
+                        <div>
+                            <p className="ownerProductCard-InfoHeader">Rental Return Date</p>
+                            <p className="ownerProductCard-InfoContent">{this.props.ownerProduct.returnedDate}</p>
+                        </div>
+                        <div>
+                            <p className="ownerProductCard-InfoHeader">Price Per Day</p>
+                            <p className="ownerProductCard-InfoContent">${this.props.ownerProduct.pricePerDay}</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4>Rental Return Date</h4>
-                        <h5>{this.props.ownerProduct.returnedDate}</h5>
-                    </div>
-                    <div>
-                        <h4>Price Per Day</h4>
-                        <h5>${this.props.ownerProduct.pricePerDay}</h5>
+                    <div className="ownerProductCard-rightInfoSet">
+                        <div>
+                            <p className="ownerProductCard-InfoHeader">Renter's Name</p>
+                            <p className="ownerProductCard-InfoContent">{this.props.ownerProduct.renterFullName}</p>
+                        </div>
+                        <div>
+                            <p className="ownerProductCard-InfoHeader">Total Rental Income</p>
+                            <p className="ownerProductCard-InfoContent">${this.props.ownerProduct.totalRentalIncome}</p>
+                        </div>
                     </div>
                 </div>
             </div>
