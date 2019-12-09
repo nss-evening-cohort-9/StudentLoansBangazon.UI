@@ -8,4 +8,6 @@ const getAllProducts = () => new Promise((resolve, reject) => {
         .catch(err => reject(reject))
 })
 
+///getAvailableProductsBySeller then call it in the sellerdidmount of the SellerPage.js component
+
 export default {getAllProducts};
