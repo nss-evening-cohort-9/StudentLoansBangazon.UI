@@ -1,17 +1,28 @@
 #MyProfileContainer {
+    button {
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+    }
+}
+
+#RentalsContainer {
     display: flex;
     justify-content: space-around;
     border: solid 1px black;
-    padding: 1.5em;
+    padding: 1.3em;
     margin: 1.5em 3em;
 }
 
 #OwnerProductContainer {
     display: flex;
     flex-direction: column;
-}
-
-#testContainer {
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
+    #OwnerProductFilterButtons {
+        margin-bottom: 10px;
+    }
+    #OwnerProductSortButtons {
+        margin-bottom: 10px;
+    }
 }

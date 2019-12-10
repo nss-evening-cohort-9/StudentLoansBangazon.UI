@@ -17,7 +17,10 @@ class OwnerProduct extends React.Component {
                         </div>
                         <div>
                             <p className="ownerProductCard-InfoHeader">Rental Return Date</p>
-                            <p className="ownerProductCard-InfoContent">{this.props.ownerProduct.returnedDate}</p>
+                            {this.props.ownerProduct.returnedDate == null 
+                            ? (<p className="ownerProductCard-InfoContent">N/A</p>)
+                            : (<p className="ownerProductCard-InfoContent">{this.props.ownerProduct.returnedDate}</p>)
+                            }
                         </div>
                         <div>
                             <p className="ownerProductCard-InfoHeader">Price Per Day</p>
