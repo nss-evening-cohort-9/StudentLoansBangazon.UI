@@ -1,5 +1,7 @@
 import React from 'react';
 import productData from '../../data/productData';
+import ProductCard from '../ProductCard/ProductCard';
+import './SellerPage.scss'
 
 class SellerPage extends React.Component {
     state = {
@@ -9,7 +11,7 @@ class SellerPage extends React.Component {
     
 
     componentDidMount() {
-         productData.getProductsBySellerId(this.state.sellerId)
+         productData.getAvailableProductsBySeller(this.props.match.params.sellerId)
         .then(resp => {
             this.setState({ allSellerAvailableProducts : resp})
         })
@@ -18,8 +20,11 @@ class SellerPage extends React.Component {
 
 
     render() {
+       const sellerProducts = this.state.allSellerAvailableProducts.map((product) => (
+           <ProductCard product={product}/> 
+       ))
         return (
-            <h1>Welcom to your seller page</h1>
+            <div className="productContainer">{sellerProducts}</div>
         )
     }
 }

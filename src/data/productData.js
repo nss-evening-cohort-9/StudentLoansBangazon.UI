@@ -14,7 +14,7 @@ const getSingleProduct = productId => axios.get(`${baseUrl}/products/item/${prod
 
 // make a getAvailableProductsBySeller function 
 const getAvailableProductsBySeller = (sellerId) => new Promise((resolve, reject) => {
-    axios.get(`${baseUrl}products/ownerpage/${sellerId}`)
+    axios.get(`${baseUrl}/products/ownerPage/${sellerId}`)
         .then(result => resolve(result.data))
         .catch(err => reject(reject))
 })
