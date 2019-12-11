@@ -29,18 +29,23 @@ class MyProfile extends React.Component {
         })
     }
 
+    filterAndSortVariables = {
+        'rental_status' : '',
+        'recency_status' : ''
+    }
+
     filterAndSort = () => {
         let filteredAndSortedProducts = this.state.allOwnerProductHistory
-        if (this.state.filtered == 'previously rented') {
+        if (this.filterAndSortVariables.rental_status === 'previously rented') {
             filteredAndSortedProducts = this.filterForPreviouslyRentedProducts(filteredAndSortedProducts)
         }
-        if (this.state.filtered == 'currently rented') {
+        if (this.filterAndSortVariables.rental_status === 'currently rented') {
             filteredAndSortedProducts = this.filterForCurrentlyRentedProducts(filteredAndSortedProducts)
         }
-        if (this.state.sorted == 'most recent') {
+        if (this.filterAndSortVariables.recency_status === 'most recent') {
             filteredAndSortedProducts = this.sortByStartDateDescending(filteredAndSortedProducts)
         }
-        if (this.state.sorted == 'least recent') {
+        if (this.filterAndSortVariables.recency_status === 'least recent') {
             filteredAndSortedProducts = this.sortbyStartDateAscending(filteredAndSortedProducts)
         }
         this.setState({displayedOwnerProductHistory : filteredAndSortedProducts})
@@ -61,19 +66,19 @@ class MyProfile extends React.Component {
     }
 
     sortByStartDateDescending = (products) => {
-        console.log("you tried to sort descending")
+        const sortedActivities = products.sort((a, b) => b.startDate - a.startDate)
     }
 
     sortbyStartDateAscending = (products) => {
-        console.log("you tried to sort ascending")
+        const sortedActivities = products.sort((a, b) => b.startDate + a.startDate)
     }
 
     filterAndSortButtonListener = (e) => {
-        if (e.target.id == 'previous-rentals-button') {
-            this.setState({filtered : 'previously rented'})
+        if (e.target.id === 'previous-rentals-button') {
+            this.filterAndSortVariables.rental_status = 'previously rented'
         }
-        if (e.target.id == 'current-rentals-button') {
-            this.setState({filtered : 'currently rented'})
+        if (e.target.id === 'current-rentals-button') {
+            this.filterAndSortVariables.rental_status = 'currently rented'
         }
         console.log("you tried to filter or sort")
         this.filterAndSort();
