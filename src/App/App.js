@@ -62,12 +62,7 @@ class App extends React.Component {
 
   render() {
     const { authed } = this.state;
-    const loadComponent = () => {
-      if (authed) {
-        return <Home />;
-      }
-      return <Auth />;
-    };
+  
 
     return (
       <div className="App">
@@ -76,7 +71,6 @@ class App extends React.Component {
           <MyNavbar authed={this.state.authed} logMeIn={this.logMeIn} logMeOut={this.logMeOut}/>
           {/* alternate auth */}
           {/* <MyNavbar authed={authed} /> */}
-          {loadComponent()}
             <Switch>
               <PublicRoute path='/Home' component={Home} authed={this.state.authed}/>
               <PrivateRoute path='/MyHome' component={Home} authed={this.state.authed}/>

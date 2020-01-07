@@ -109,7 +109,7 @@ class MyProfile extends React.Component {
                         {ownerProducts}
                     </div>
                 </div>
-            /</div>
+            </div>
         )
     }
 }
