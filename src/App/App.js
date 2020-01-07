@@ -9,6 +9,7 @@ import MyNavbar from '../Components/Navbar/Navbar';
 import MyProfile from '../Components/MyProfile/MyProfile';
 import SingleProduct from '../Components/SingleProduct/SingleProduct';
 import SellerPage from '../Components/SellerPage/SellerPage';
+import UserData from '../data/userData';
 
 import fbConnection from '../helpers/data/connection';
 
