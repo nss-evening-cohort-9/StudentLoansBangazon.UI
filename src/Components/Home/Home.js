@@ -17,7 +17,6 @@ class Home extends Component {
       const data = resp
       this.setState({products:data})
     })
-
   }
   render () {
     const products = this.state.products

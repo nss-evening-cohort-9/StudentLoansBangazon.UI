@@ -9,7 +9,7 @@ import MyNavbar from '../Components/Navbar/Navbar';
 import MyProfile from '../Components/MyProfile/MyProfile';
 import SingleProduct from '../Components/SingleProduct/SingleProduct';
 import SellerPage from '../Components/SellerPage/SellerPage';
-import UserData from '../data/userData';
+import userData from '../data/userData';
 
 import fbConnection from '../helpers/data/connection';
 
@@ -40,7 +40,8 @@ class App extends React.Component {
   logMeIn = (e) => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    firebase.auth().signInWithPopup(provider)
+      .then();
   }
 
   logMeOut = () => {
@@ -63,8 +64,16 @@ class App extends React.Component {
 
   render() {
     const { authed } = this.state;
-  
-
+    if (authed) {
+      console.log("yo you are authed in the mount")
+      userData.checkForUserAcct(firebase.auth().currentUser.uid)
+      .then((resp) => {
+        if (resp === 0){
+          console.log("we are trying to create a new user")
+          userData.createNewUser(firebase.auth().currentUser.uid)
+        }
+      })
+    }
     return (
       <div className="App">
       <BrowserRouter>
