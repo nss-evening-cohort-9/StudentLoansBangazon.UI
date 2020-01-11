@@ -10,9 +10,20 @@
         margin: 5px auto;
         
     }
+
+    .searchBar{
+        display: block;
+        margin: 7px auto;
+        margin-top: 12px;
+        margin-bottom: 7px;
+        width: 375px;
+        border: 1px black solid;
+        padding: 2px;
+        //text-align: center;
+    }
     
     .productContainer{
-        margin: 25px auto;
+        margin: 15px auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

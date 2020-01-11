@@ -12,12 +12,32 @@ class Home extends Component {
 
 
   componentDidMount = () => {
+    this.getHomePageProducts();
+  }
+
+  getHomePageProducts = () => {
     productData.getAllProducts()
     .then(resp => {
       const data = resp
       this.setState({products:data})
     })
   }
+
+  productSearch = (e) => {
+    if (e.target.value === "") {
+      this.getHomePageProducts();
+    }
+    else {
+      productData.getProductsBySearch(e.target.value)
+      .then(resp => {
+      const filteredProducts = resp
+      this.setState({products:filteredProducts})
+     })
+    }
+  }
+
+
+
   render () {
     const products = this.state.products
     const productNames = products.map((product) => (
@@ -28,6 +48,7 @@ class Home extends Component {
     return (
       <div className="Home">
           <button className="btn btn-warning listbutton">List Your Stuff</button>
+          <input type="text" className="searchBar" onChange={this.productSearch} placeholder="Search By Product Name"/>
           <div className="productContainer">
           {productNames}
           </div>
