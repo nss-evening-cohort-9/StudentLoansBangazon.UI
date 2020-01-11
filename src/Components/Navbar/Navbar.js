@@ -7,11 +7,9 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink } from 'reactstrap';
-import PropTypes from 'prop-types';
-
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
+  NavLink } from 'reactstrap'; 
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 class MyNavbar extends React.Component {
 
@@ -24,9 +22,9 @@ class MyNavbar extends React.Component {
       }
     
     logMeOut = (e) => {
-        this.props.logMeOut()
-        // e.preventDefault();
-        // firebase.auth().signOut();
+       // this.props.logMeOut()
+        e.preventDefault();
+        firebase.auth().signOut();
     }  
 
     logMeIn = (e) => {

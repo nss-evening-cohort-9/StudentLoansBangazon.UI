@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Home.scss';
 
 import productData from '../../data/productData';
-
+import userData from '../../data/productData';
 import ProductCard from '../ProductCard/ProductCard';
 
 class Home extends Component {

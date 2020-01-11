@@ -2,6 +2,8 @@ import React from 'react';
 import rentalData from '../../data/rentalData';
 import OwnerProduct from '../OwnerProduct/OwnerProduct';
 import './MyProfile.scss';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 class MyProfile extends React.Component {
 
@@ -84,6 +86,8 @@ class MyProfile extends React.Component {
         this.filterAndSort();
     }
 
+    
+
     render() {
 
         const ownerProducts = this.state.displayedOwnerProductHistory.map((ownerProduct) => (
@@ -109,7 +113,7 @@ class MyProfile extends React.Component {
                         {ownerProducts}
                     </div>
                 </div>
-            /</div>
+            </div>
         )
     }
 }
