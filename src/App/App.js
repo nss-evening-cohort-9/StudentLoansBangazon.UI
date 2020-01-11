@@ -63,6 +63,7 @@ class App extends React.Component {
   }
 
   render() {
+    ///checks to see if user is authed on every render as a fix to timing issue
     const { authed } = this.state;
     if (authed) {
       console.log("yo you are authed in the mount")

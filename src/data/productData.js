@@ -9,6 +9,12 @@ const getAllProducts = () => new Promise((resolve, reject) => {
         .catch(err => reject(reject))
 })
 
+const getProductsBySearch = (searchTerm) => new Promise((resolve, reject) => {
+    axios.get(`${baseUrl}/products/search/${searchTerm}`)
+        .then(result => resolve(result.data))
+        .catch(err => reject(reject))
+})
+
 const getSingleProduct = productId => axios.get(`${baseUrl}/products/item/${productId}`)
 
 
@@ -20,6 +26,7 @@ const getAvailableProductsBySeller = (sellerId) => new Promise((resolve, reject)
 })
 
 export default {
+    getProductsBySearch,
     getAllProducts, 
     getSingleProduct,
     getAvailableProductsBySeller
